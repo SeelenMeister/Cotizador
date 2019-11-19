@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>COTIZADOR</title>
+    <!-- Dependencias -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <script src="img.js"></script>
+    <script src="img.min.js"></script>
+    <link rel="stylesheet" href="img.css">
+</head>
+<body>
+<h1>By SeelenMeister</h1>
+<br>
+<div class="container">
+    <h2>Cotizador Dinamico</h2>
+    <p>Este cotizador dinámico se puede implementar en cualquier sitio web =)</p>
+<br>
+<!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab">COTIZADOR</a>
+        </li>
+    </ul>
+      
+<!-- Tab panes -->
+<!-- INICIO -->
+    <div class="tab-content">
+        <div id="inicio" class="container tab-pane active"><br>
+            <h3>HOME</h3>
+            <p>Comenzemos!</p>
+            <button data-toggle="tab" href="#p1" class="btn btn-success">Iniciar!</button>
+        </div>
+<!-- Paso 1 -->
+    <div id="p1" class="container tab-pane fade"><br>
+        <h3>Paso 1 - Forma</h3>
+        <p>Seleccioná la forma de tu pileta</p>
+        <select name="select1" id="select1">
+            <option data-img-src="img/1.png" value="1">1</option>
+            <option data-img-src="img/2.png" value="2">2</option>
+        </select>
+        <button data-toggle="tab" href="#p2" id="enviar1" class="btn btn-success">Siguiente</button>
+    </div>
+<!-- Paso 2 -->
+    <div id="p2" class="container tab-pane fade"><br>
+        <h3>Paso 2 - Medidas</h3>
+        <p>Seleccioná las medidas deseadas</p>
+    <!-- Opcion 1 -->
+        <div class="row" id="opt1">
+            <div class="col-sm-6">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">A:</span>
+                    </div>
+                    <input type="number" class="form-control" pattern="[1-9]" id="inp1a">
+                    <div class="input-group-append">
+                        <span class="input-group-text">Metros</span>
+                    </div>
+                </div>
+                <div id="alerta1">
+                    <p class="text-danger">Debes ingresar un valor para continuar !</p>
+                </div>
+                <div class="container" id="res1"></div>
+                <button data-toggle="tab" href="#p3" id="enviar2a" class="btn btn-success">Siguiente!</button>
+            </div>
+            <div class="col-sm-6">
+                <img src="img/1a.png">
+            </div>
+        </div>
+    <!-- Opcion 2 -->
+        <div class="row" id="opt2">
+            <div class="col-sm-6">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">A:</span>
+                    </div>
+                    <input type="number" class="form-control" pattern="[1-9]" id="inp2a">
+                    <div class="input-group-append">
+                        <span class="input-group-text">Metros</span>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">B:</span>
+                    </div>
+                    <input type="number" class="form-control" pattern="[1-9]" id="inp2b">
+                    <div class="input-group-append">
+                        <span class="input-group-text">Metros</span>
+                    </div>
+                </div>
+                <div id="alerta2">
+                    <p class="text-danger">Debes ingresar ambos valores para continuar !</p>
+                </div>
+                <div class="container" id="res2"></div>
+                <button data-toggle="tab" href="#p3" id="enviar2b" class="btn btn-success">Siguiente!</button>
+            </div>
+            <div class="col-sm-6">
+                <img src="img/2a.png">
+            </div>
+        </div>
+    </div>
+<!-- PASO 3 -->
+    <div id="p3" class="container tab-pane fade"><br>
+        <h3>Paso 3 - Colores</h3>
+        <p>Seleccioná el color deseado</p>
+        <select name="color" id="color">
+            <option data-img-src="img/c1.png" value="1">1</option>
+            <option data-img-src="img/c2.png" value="2">2</option>
+            <option data-img-src="img/c3.png" value="3">2</option>
+        </select>
+        <button data-toggle="tab" href="#p4" id="enviar3" class="btn btn-success">Siguiente!</button>
+    </div>
+<!-- PASO 4 / FIN -->
+    <div id="p4" class="container tab-pane fade"><br>
+        <h3>Resultado Cotización</h3>
+        <div class="row">
+            <div class="col-sm-6">
+                <p>Forma Elejida:</p>
+                <div id="forma1"><img src="img/1.png"></div>
+                <div id="forma2"><img src="img/2.png"></div>
+            </div>
+            <div class="col-sm-6">
+                <p>Color Elejido:</p>
+                <div id="color1"><img src="img/c1.png"></div>
+                <div id="color2"><img src="img/c2.png"></div>
+                <div id="color3"><img src="img/c3.png"></div>
+            </div>
+        </div>
+        <div class="container">
+            <p>Costo de envio: $0 (gratis!)</p>
+        </div>
+        <div id="final"></div>
+        <div class="container text-center">
+                <button class="btn btn-dark btn-block"><a href="index.html">Reservar ahora!</a></button>
+        </div>
+        
+    </div>
+    </div>
+</div>
+</body>
+</html>
